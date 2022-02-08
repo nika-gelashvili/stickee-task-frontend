@@ -39,7 +39,6 @@ export default {
           }
         )
         .then((response) => {
-          console.log(response);
           this.getData();
         })
         .catch((error) => {
@@ -59,7 +58,6 @@ export default {
         )
         .then((response) => {
           this.size = 1;
-          console.log(response);
           this.getData();
         })
         .catch((error) => {
