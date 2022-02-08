@@ -17,7 +17,7 @@ export default {
     getData() {
       this.isBusy = true;
       this.$http
-        .get("http://api.stikee.test/api/getWidgetPackSizesData")
+        .get("http://127.0.0.1:8084/api/getWidgetPackSizesData")
         .then((response) => {
           this.isBusy = false;
           this.tableData = response.data.data;
@@ -30,7 +30,7 @@ export default {
     deleteData(deleteId) {
       this.$http
         .post(
-          "http://api.stikee.test/api/deleteWidgetPackSize",
+          "http://127.0.0.1:8084/api/deleteWidgetPackSize",
           { id: deleteId },
           {
             headers: {
@@ -48,7 +48,7 @@ export default {
     saveSize() {
       this.$http
         .post(
-          "http://api.stikee.test/api/saveWidgetPackSize",
+          "http://127.0.0.1:8084/api/saveWidgetPackSize",
           { size: this.size },
           {
             headers: {
@@ -66,7 +66,7 @@ export default {
     },
     buyWidgets() {
       this.$http
-        .get("http://api.stikee.test/api/createWidgetOrder", {
+        .get("http://127.0.0.1:8084/api/createWidgetOrder", {
           params: {
             amount: this.buyAmount,
           },
@@ -87,7 +87,7 @@ export default {
     editData() {
       this.$http
         .post(
-          "http://api.stikee.test/api/updateWidgetPackSize",
+          "http://127.0.0.1:8084/api/updateWidgetPackSize",
           { id: this.editId, size: this.editAmount },
           {
             headers: {
