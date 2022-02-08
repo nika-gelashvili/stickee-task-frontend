@@ -17,7 +17,7 @@ export default {
     getData() {
       this.isBusy = true;
       this.$http
-        .get("http://127.0.0.1:8084/api/getWidgetPackSizesData")
+        .get("http://5.22.221.149/api/getWidgetPackSizesData")
         .then((response) => {
           this.isBusy = false;
           this.tableData = response.data.data;
@@ -30,7 +30,7 @@ export default {
     deleteData(deleteId) {
       this.$http
         .post(
-          "http://127.0.0.1:8084/api/deleteWidgetPackSize",
+          "http://5.22.221.149/api/deleteWidgetPackSize",
           { id: deleteId },
           {
             headers: {
@@ -48,7 +48,7 @@ export default {
     saveSize() {
       this.$http
         .post(
-          "http://127.0.0.1:8084/api/saveWidgetPackSize",
+          "http://5.22.221.149/api/saveWidgetPackSize",
           { size: this.size },
           {
             headers: {
@@ -66,7 +66,7 @@ export default {
     },
     buyWidgets() {
       this.$http
-        .get("http://127.0.0.1:8084/api/createWidgetOrder", {
+        .get("http://5.22.221.149/api/createWidgetOrder", {
           params: {
             amount: this.buyAmount,
           },
@@ -87,7 +87,7 @@ export default {
     editData() {
       this.$http
         .post(
-          "http://127.0.0.1:8084/api/updateWidgetPackSize",
+          "http://5.22.221.149/api/updateWidgetPackSize",
           { id: this.editId, size: this.editAmount },
           {
             headers: {
