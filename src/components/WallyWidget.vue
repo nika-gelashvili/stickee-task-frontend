@@ -72,6 +72,7 @@ export default {
           },
         })
         .then((response) => {
+          this.packs = "";
           for (let [k, v] of Object.entries(response.data.packs)) {
             this.packs += k + " x" + v + " | ";
           }
@@ -128,12 +129,12 @@ export default {
         <template #cell(actions)="data">
           <b-button
             variant="warning"
-            @click="showEditData(data.id)"
+            @click="showEditData(data.item.id)"
             style="margin-right: 10px"
           >
             Edit
           </b-button>
-          <b-button variant="danger" @click="deleteData(data.id)">
+          <b-button variant="danger" @click="deleteData(data.item.id)">
             Delete
           </b-button>
         </template>
